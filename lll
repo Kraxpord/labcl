@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+void horizontalLine(char symbol, int length, int speed) {
+    for (int i = 0; i < length; i++) {
+        cout << symbol;
+        Sleep(speed);
+    }
+    cout << endl;
+}
+
+void verticalLine(char symbol, int length, int speed) {
+    for (int i = 0; i < length; i++) {
+        cout << symbol << endl;
+        Sleep(speed);
+    }
+}
+
+int main() {
+    int choice1, choice2, length;
+    char symbol;
+
+    std::cout << "������� ��� ����:\n1. �������������\n2. �����������\n";
+    std::cin >> choice1;
+
+    cout << "������ ������, ���� ���� ��������� ����: ";
+    cin >> symbol;
+
+    cout << "������ ������� ����: ";
+    cin >> length;
+
+    cout << "������� �������� ��������� ����:\n1. ������\n2. ���������\n3. �������\n";
+    cin >> choice2;
+
+    switch (choice1) {
+    case 1:
+        switch (choice2) {
+        case 1:
+            horizontalLine(symbol, length, 50);
+            break;
+        case 2:
+            horizontalLine(symbol, length, 100);
+            break;
+        case 3:
+            horizontalLine(symbol, length, 200);
+            break;
+        default:
+            cout << "������� ���� ��������\n";
+            break;
+        }
+        break;
+    case 2:
+        switch (choice2) {
+        case 1:
+            verticalLine(symbol, length, 50);
+            break;
+        case 2:
+            verticalLine(symbol, length, 100);
+            break;
+        case 3:
+            verticalLine(symbol, length, 200);
+            break;
+        default:
+            cout << "������� ���� ��������\n";
+            break;
+        }
+        break;
+    default:
+        cout << "������� ���� ���� ����\n";
+        break;
+     return 0;      
+    }
